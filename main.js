@@ -26,12 +26,12 @@ function checkGuess () {
     lastResult.textContent = '!!Out of Turns!!'
     setGameOver()
   } else {
-    lastResult.textContent = 'Wrong!'
+    lastResult.textContent = 'Try Again!'
     lastResult.style.backgroundColor = 'red'
     if (userGuess < randomNumber) {
       lowHi.textContent = 'Too low!!'
     } else if (userGuess > randomNumber) {
-      lowHi.textContent = 'Too Hi'
+      lowHi.textContent = 'Too high'
     }
   }
   guessCount++
@@ -62,6 +62,8 @@ function resetGame () {
   guessSubmit.disabled = false
   guessInput.value = ''
   guessInput.focus()
+
+  location.reload() // reloads page
 
   lastResult.style.backgroundColor = 'pink'
 
